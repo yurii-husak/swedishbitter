@@ -1,0 +1,80 @@
+svg{
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+	@include ba-transition('fill, stroke');
+}
+a,
+[type="submit"],
+[type="button"],
+button{
+	@include ba-transition;
+}
+a{
+	&:focus{
+		color: #fff;
+	}
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	max-width: 1720px;
+	margin: 0 auto;
+}
+.ba-button{
+	background: #7eb252;
+	text-transform: uppercase;
+	border: none;
+	color: #fff;
+	font-size: 12px;
+	line-height: 22px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	outline: none;
+	transition: all 0.5s;
+	font-weight: 700;
+	@include breakpoint(medium) {
+		font-size: 14px;
+	}
+	.ba-button-text{
+		position: relative;
+		transition: all 0.5s;
+
+		@include breakpoint(medium) {
+			margin-right: 50px;
+			&::after{
+				content: '';
+				position: absolute;
+				width: 31px;
+				height: 9px;
+				background-image: url('../images/btn-arrow.png');
+				top: 50%;
+				transform: translateY(-50%);
+				right: -50px;
+				transition: all 0.5s;
+			}
+		}
+	}
+
+	&:hover{
+		.ba-button-text{
+			color: #fff;
+			&::after{
+				content: '';
+				right: -65px;
+			}
+		}
+	}
+}
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 1s ease;}
+input::-moz-placeholder, textarea::-moz-placeholder                {opacity: 1; transition: opacity 1s ease;}
+input:-moz-placeholder, textarea:-moz-placeholder                 {opacity: 1; transition: opacity 1s ease;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 1s ease;}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 1s ease;}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder        {opacity: 0; transition: opacity 1s ease;}
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 1s ease;}
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 1s ease;}

@@ -1,0 +1,689 @@
+.ba-symptoms-wrapper{
+  @include breakpoint(medium) {
+    margin-top: 75px;
+  }
+  @include breakpoint(large) {
+    margin-top: 115px;
+  }
+
+  .ba-symptoms-title{
+    padding: 30px 0;
+    font-weight: 700;
+    line-height: 50px;
+    color: #303030;
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    max-width: 370px;
+    width: 100%;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    @include breakpoint(large) {
+      text-align: left;
+      font-size: 40px;
+      max-width: 100%;
+      line-height: 50px;
+    }
+  }
+
+  .ba-symptoms-content{
+    background-color: #f6f9f3;
+    @include breakpoint(large) {
+      padding-bottom: 30px;
+    }
+
+    .ba-symptoms-tabs{
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem;
+      @include breakpoint(medium) {
+        padding-right: 50px;
+        padding-left: 50px;
+      }
+      @include breakpoint(large) {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+      }
+
+
+      .ba-symptom-tab{
+        display: flex;
+        align-items: center;
+        padding: 25px 0 25px 0;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 1px solid #e6efde;
+        @include breakpoint(medium) {
+          padding: 25px 90px 25px 0;
+        }
+
+        .ba-symptom-tab-num{
+          color: #a4c58c;
+          font-size: 14px;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          margin-right: 12px;
+          font-weight: 600;
+          @include breakpoint(medium) {
+            margin-right: 20px;
+          }
+        }
+
+        .ba-symptom-tab-title{
+          font-size: 12px;
+          color: #303030;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          font-weight: 600;
+          margin-bottom: 0;
+          @include breakpoint(medium) {
+            font-size: 14px;
+          }
+        }
+
+        .ba-symptom-tab-arrow{
+          display: none;
+          position: absolute;
+          right: 40px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .ba-symptom-tabs-half{
+      margin: 0;
+
+      .ba-symptom-tab-half{
+        display: flex;
+        align-items: center;
+        padding: 20px 0 20px 0;
+        position: relative;
+        cursor: pointer;
+        border-bottom: 1px solid #e6efde;
+        &:last-child{
+          border-bottom: none;
+        }
+
+        @include breakpoint(medium) {
+          border-right: 1px solid #e6efde;
+          padding: 20px 40px 20px 0;
+
+          &:last-child{
+            border-bottom: 1px solid #e6efde;
+          }
+
+          &:nth-child(2n+2){
+            border-right: none;
+            .ba-symptom-tab-half-num{
+              margin-left: 40px;
+            }
+          }
+        }
+
+        .ba-symptom-tab-half-num {
+          color: #a4c58c;
+          font-size: 12px;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          margin-right: 12px;
+          font-weight: 600;
+          @include breakpoint(medium) {
+            margin-right: 20px;
+          }
+        }
+
+        .ba-symptom-tab-half-title{
+          font-size: 14px;
+          margin-bottom: 0;
+          @include breakpoint(medium) {
+            font-size: 16px;
+          }
+        }
+
+        .ba-symptom-tab-half-arrow{
+          display: none;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .ba-symptom-tab.active-tab{
+      .ba-symptom-tab-arrow{
+        display: none;
+        @include breakpoint(medium) {
+          display: block;
+        }
+      }
+    }
+    .ba-symptom-tab-half.active-tab{
+      .ba-symptom-tab-half-arrow{
+        display: none;
+        @include breakpoint(medium) {
+          display: block;
+        }
+      }
+    }
+    
+    .ba-symptoms-right-content{
+      position: relative;
+      padding: 0;
+      background: #a4c58c;
+      @include breakpoint(large) {
+        padding: 0 0.9375rem;
+        background: transparent;
+      }
+
+      .ba-symptoms-right-image{
+        display: block;
+        @include breakpoint(medium) {
+          position: relative;
+          width: max-content;
+          margin: 0 auto;
+        }
+        @include breakpoint(large) {
+          position: absolute;
+          top: -180px;
+          left: 0;
+          width: auto;
+        }
+        
+        img{
+          display: none;
+          @include breakpoint(medium) {
+            display: block;
+          }
+        }
+
+        .ba-symptoms-tabs-circle{
+          display: none;
+          @include breakpoint(medium) {
+            display: block;
+          }
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          .ba-tab-circle{
+            position: absolute;
+            display: none;
+            font-weight: 700;
+            font-size: 12px;
+            color: #fff;
+            background: #a5c98a;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 9px solid rgba(255, 255, 255, 0.8);
+            box-sizing: content-box;
+          }
+
+          .ba-tab-circle.active-tab-circle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      .ba-symptoms-testimonials{
+        padding: 20px;
+        background-color: #f6f9f3;
+        position: relative;
+        width: 100%;
+        @include breakpoint(medium) {
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: max-content;
+        }
+        @include breakpoint(large) {
+          left: 0;
+          transform: translateX(0);
+        }
+
+        .ba-symptoms-testimonials-content{
+          padding: 30px 20px 30px 20px;
+          border: 1px solid #c5dab5;
+          position: relative;
+          @include breakpoint(medium) {
+            padding: 30px 25px 30px 50px;
+          }
+
+          .ba-symptoms-testimonials-text{
+            font-size: 14px;
+            @include breakpoint(medium) {
+              max-width: 300px;
+              font-size: 16px;
+            }
+          }
+
+          .ba-symptoms-testimonials-link{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            font-weight: 600;
+            color: #7fb252;
+            font-size: 14px;
+            background: #f6f9f3;
+            padding: 0 10px;
+            text-decoration: underline;
+
+            &:hover{
+              color: #32600b;
+            }
+
+            @include breakpoint(medium) {
+              left: 45px;
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+
+      .ba-symptoms-button{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        @include breakpoint(medium) {
+          max-width: 417px;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -125px;
+        }
+        @include breakpoint(large) {
+          max-width: 100%;
+          left: 0;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+.ba-popularity-wrapper{
+  min-height: 640px;
+  margin-top: 125px;
+  position: relative;
+
+  @include breakpoint(medium) {
+    margin-top: 250px;
+  }
+  @include breakpoint(large) {
+    margin-top: 290px;
+    -webkit-background-size: 50%;
+    background-size: 50%;
+  }
+
+  img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    position: inherit;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include breakpoint(large) {
+      max-width: 50%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+
+  .ba-popularity-content{
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    @include breakpoint(large) {
+      flex-direction: row;
+    }
+
+    .ba-popularuty-left{
+      width: 100%;
+      position: relative;
+      padding-right: 0;
+      padding-left: 0;
+      @include breakpoint(large) {
+        position: inherit;
+      }
+
+      .ba-popularity-left__content{
+        background: #fff;
+        padding: 0;
+        z-index: 1;
+        @include breakpoint(medium) {
+          max-width: 600px;
+          position: absolute;
+          bottom: -90px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          padding: 20px;
+        }
+        @include breakpoint(large) {
+          max-width: 100%;
+          margin-bottom: -116px;
+          position: relative;
+          bottom: 0;
+          left: 0;
+          transform: translateX(-0);
+        }
+
+        .ba-popularity-left__text{
+          padding: 35px;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+          @include breakpoint(medium) {
+            border: 1px solid #c8dcba;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: left;
+          }
+        }
+
+        .ba-popularity-left__button{
+          width: 100%;
+          display: block;
+          margin-top: -1px;
+          text-align: center;
+          padding-left: 20px;
+          padding-right: 20px;
+          @include breakpoint(medium) {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    .ba-popularity-right{
+      width: 100%;
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem;
+      margin-bottom: 10px;
+      @include breakpoint(medium) {
+        margin-bottom: 35px;
+      }
+      @include breakpoint(large) {
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+
+      .ba-popularity-right__content{
+        @include breakpoint(medium) {
+          max-width: 538px;
+          margin: 0 auto;
+
+        }
+        @include breakpoint(large) {
+          max-width: 100%;
+          padding-left: 70px;
+          padding-top: 30px;
+        }
+      }
+
+      .ba-popularity-right__title{
+        font-weight: 700;
+        color: #303030;
+        text-align: center;
+        font-size: 24px;
+        line-height: 30px;
+        margin: 0;
+        @include breakpoint(medium) {
+          font-size: 30px;
+          line-height: 40px;
+        }
+        @include breakpoint(large) {
+          text-align: left;
+          font-size: 40px;
+          line-height: 50px;
+          max-width: 490px;
+        }
+      }
+
+      .ba-popularity-right__subtitle{
+        padding: 20px 0;
+        font-size: 12px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #303030;
+        font-weight: 700;
+        text-align: center;
+        @include breakpoint(medium) {
+          padding: 35px 0 30px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        @include breakpoint(large) {
+          text-align: left;
+          padding: 30px 0 45px;
+        }
+      }
+
+      .ba-popularity-right__desc{
+        font-size: 14px;
+        @include breakpoint(medium) {
+          font-size: 16px;
+        }
+
+        ul{
+          margin-left: 0;
+          list-style: none;
+          li{
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            @include breakpoint(medium) {
+              margin-bottom: 20px;
+              padding-left: 40px;
+            }
+            @include breakpoint(large) {
+              margin-bottom: 50px;
+            }
+
+            &:last-child{
+              margin-bottom: 0;
+            }
+            
+            &::before{
+              content: '';
+              background-image: url('../images/arrow.png');
+              background-repeat: no-repeat;
+              background-position: left top;
+              position: absolute;
+              top: 4px;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              @include breakpoint(medium) {
+                background-position: left center;
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ba-history-wrapper{
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 250px;
+  @include breakpoint(large) {
+    margin-top: 270px;
+  }
+
+  .ba-history-left{
+    padding-right: 0;
+    padding-left: 0;
+
+    .ba-history-title{
+      font-weight: 700;
+      color: #303030;
+      text-align: center;
+      font-size: 20px;
+      line-height: 26px;
+      margin: 0;
+      background-color: #f6f9f3;
+      padding: 55px 0.9375rem 20px;
+      @include breakpoint(medium) {
+        font-size: 30px;
+        line-height: 40px;
+        padding: 210px 0 40px;
+      }
+      @include breakpoint(large) {
+        text-align: left;
+        font-size: 40px;
+        line-height: 50px;
+        padding: 50px 0 40px;
+        background-color: transparent;
+      }
+    }
+
+    .ba-history-text{
+      background-color: #f6f9f3;
+      position: relative;
+      z-index: 2;
+      padding: 0 0.9375rem 20px;
+      font-size: 14px;
+      line-height: 24px;
+      @include breakpoint(medium) {
+        padding: 55px 0.9375rem;
+        font-size: 16px;
+      }
+      @include breakpoint(large) {
+        margin-right: -30px;
+        padding: 55px 40px 55px 0;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -90%;
+        background-color: #f6f9f3;
+        z-index: -1;
+      }
+
+      p{
+        margin-bottom: 15px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .ba-history-form-image{
+      flex-direction: column-reverse;
+      @include breakpoint(medium) {
+        flex-direction: row;
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+      }
+      @include breakpoint(large) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .ba-history-image-mobile{
+      display: block;
+      z-index: 2;
+      @include breakpoint(medium) {
+        margin-top: -25px;
+      }
+      @include breakpoint(large) {
+        display: none;
+      }
+    }
+
+    .ba-history-form{
+      max-width: 100%;
+      width: 100%;
+      margin-top: 30px;
+      @include breakpoint(medium) {
+        margin-top: 55px;
+        margin-left: 45px;
+        max-width: 280px;
+      }
+      @include breakpoint(large) {
+        margin-left: 245px;
+        margin-top: 45px;
+        max-width: 370px;
+      }
+
+      .ba-history-form__title{
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding: 0 40px;
+        text-align: center;
+        @include breakpoint(medium) {
+          padding: 0;
+          text-align: left;
+        }
+      }
+
+      input[type='email']{
+        border: none;
+        border-bottom: 1px solid #cddcbc;
+        box-shadow: none;
+        padding: 10px 0;
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        @include breakpoint(medium) {
+          max-width: 100%;
+          text-align: left;
+        }
+
+        &::placeholder{
+          color: #cddcbc;
+        }
+      }
+
+      .ba-history-form__button{
+        width: 100%;
+        margin-top: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .ba-history-right{
+    padding-right: 0;
+    padding-left: 0;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+    .ba-history-image{
+      position: absolute;
+      max-width: 44%;
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+  }
+}
+
