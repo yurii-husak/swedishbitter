@@ -239,6 +239,28 @@ get_header(); ?>
         <!-- /.row ba-history-content -->
     </section>
     <!-- /.ba-history-wrapper wrapper -->
+
+    <div class="ba-author-wrapper">
+        <img class="ba-author-bg-one" src="wp-content/themes/swedishbitter/dist/assets/images/author-background.png" alt="Author Flower">
+        <img class="ba-author-bg-two" src="wp-content/themes/swedishbitter/dist/assets/images/author-background.png" alt="Author Flower">
+        <div class="wrapper">
+            <div class="row">
+                <div class="column small-12 medium-12 large-8 large-offset-2 ba-author-content">
+                    <div class="ba-author-text"><?php the_field('author_text'); ?></div>
+                    <!-- /.ba-author-text -->
+                    <p class="ba-author-name">
+                        <?php the_field('author_name'); ?>
+                        <span class="ba-author-name__year"><?php the_field('author_name_-_years'); ?></span>
+                    </p>
+                    <!-- /.ba-author-name -->
+                </div>
+                <!-- /.column small-12 medium-12 large-8 large-offset-2 ba-author-content -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.wrapper -->
+    </div>
+    <!-- /.ba-author-wrapper -->
 </main>
 
 <?php get_footer(); ?>

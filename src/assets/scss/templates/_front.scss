@@ -522,7 +522,7 @@
 .ba-history-wrapper{
   overflow: hidden;
   position: relative;
-  margin-bottom: 250px;
+  margin-bottom: 10px;
   @include breakpoint(large) {
     margin-top: 270px;
   }
@@ -687,3 +687,100 @@
   }
 }
 
+.ba-author-wrapper{
+  position: relative;
+  padding: 45px 0 55px;
+  @include breakpoint(medium) {
+    padding: 80px 0 0;
+  }
+  @include breakpoint(large) {
+    padding: 190px 0 90px;
+  }
+
+  .ba-author-bg-one{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .1;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+  }
+
+  .ba-author-bg-two{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotateY(180deg);
+    opacity: .1;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+  }
+
+  .row{
+    padding: 0 0.9375rem;
+    @include breakpoint(large) {
+      padding: 0;
+    }
+  }
+
+  .ba-author-content{
+    text-align: center;
+    padding: 0;
+    @include breakpoint(medium) {
+      padding: 60px 60px;
+      border-top: 3px solid #a4c58c;
+      border-bottom: 3px solid #a4c58c;
+    }
+    @include breakpoint(large) {
+      padding: 60px 0;
+    }
+
+    .ba-author-text{
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #303030;
+      @include breakpoint(medium) {
+        font-size: 18px;
+        line-height: 36px;
+      }
+      @include breakpoint(large) {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+
+    .ba-author-name{
+      font-size: 14px;
+      line-height: 18px;
+      color: #303030;
+      @include breakpoint(medium) {
+        font-size: 16px;
+        line-height: 30px;
+      }
+      @include breakpoint(large) {
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      .ba-author-name__year{
+        color: #9a9a9a;
+        font-size: 12px;
+        display: block;
+        margin-top: 10px;
+        @include breakpoint(medium) {
+          display: inline-block;
+          margin-top: 0;
+        }
+        @include breakpoint(large) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
