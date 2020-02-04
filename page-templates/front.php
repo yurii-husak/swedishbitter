@@ -240,7 +240,7 @@ get_header(); ?>
     </section>
     <!-- /.ba-history-wrapper wrapper -->
 
-    <div class="ba-author-wrapper">
+    <section class="ba-author-wrapper">
         <img class="ba-author-bg-one" src="wp-content/themes/swedishbitter/dist/assets/images/author-background.png" alt="Author Flower">
         <img class="ba-author-bg-two" src="wp-content/themes/swedishbitter/dist/assets/images/author-background.png" alt="Author Flower">
         <div class="wrapper">
@@ -259,8 +259,59 @@ get_header(); ?>
             <!-- /.row -->
         </div>
         <!-- /.wrapper -->
-    </div>
+    </section>
     <!-- /.ba-author-wrapper -->
+
+    <section class="ba-set-wrapper wrapper">
+        <div class="row">
+            <div class="column ba-set-title-wrapper">
+                <h2 class="ba-set-title"><?php the_field('sets_title'); ?></h2>
+                <!-- /.ba-set-title -->
+            </div>
+            <!-- /.column ba-set-title-wrapper -->
+        </div>
+        <!-- /.row -->
+        <div class="ba-set-items-wrapper">
+            <?php if( have_rows('sets_items') ): ?>
+                <div class="row">
+                    <?php $set_count = 0 ?>
+                    <?php while( have_rows('sets_items') ): the_row();?>
+                        <?php ++$set_count; ?>
+                        <div class="column small-12 medium-4">
+                            <div class="ba-set-item-wrapper">
+                                <div class="ba-set-item-content">
+                                    <div class="ba-set-item__image">
+                                        <?php if($set_count < 10) : ?>
+                                            <div class="ba-set-item__num"><?php echo '0'.$set_count; ?></div>
+                                        <?php else: ?>
+                                            <div class="ba-set-item__num"><?php echo $set_count; ?></div>
+                                        <?php endif; ?>
+                                        <!-- /.ba-set-item__num -->
+                                        <img src="<?php the_sub_field('image'); ?>" alt="Item">
+                                    </div>
+                                    <!-- /.ba-set-item__image -->
+                                    <h5 class="ba-set-item__title"><?php the_sub_field('text'); ?></h5>
+                                    <!-- /.ba-set-item__title -->
+                                </div>
+                                <!-- /.ba-set-item-content -->
+                            </div>
+                            <!-- /.ba-set-item-wrapper -->
+                        </div>
+                        <!-- /.column small-12 medium-4 -->
+                    <?php endwhile; ?>
+                </div>
+                <!-- /.row -->
+            <?php endif; ?>
+
+
+
+
+
+
+        </div>
+        <!-- /.ba-set-items-wrapper -->
+    </section>
+    <!-- /.ba-set-wrapper wrapper -->
 </main>
 
 <?php get_footer(); ?>
