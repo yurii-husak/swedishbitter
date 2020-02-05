@@ -3,7 +3,7 @@
 Template Name: Front
 */
 get_header(); ?>
-<?php $tab_index = 0; $circle_index = 0; ?>
+<?php $tab_index = 0; $circle_index = 0; $compos_index = 0; $compos_index_mobile = 0; ?>
 
 <main class="ba-main-content">
     <section class="ba-symptoms-wrapper">
@@ -212,9 +212,9 @@ get_header(); ?>
                             <form>
                                 <input type="email" placeholder="E-mail" name="email">
                                 <button class="ba-history-form__button ba-button">
-                                <span class="ba-button-text">
-                                    Оставить почту
-                                </span>
+                                    <span class="ba-button-text">
+                                        Оставить почту
+                                    </span>
                                     <!-- /.ba-button-text -->
                                 </button>
                             </form>
@@ -312,6 +312,255 @@ get_header(); ?>
         <!-- /.ba-set-items-wrapper -->
     </section>
     <!-- /.ba-set-wrapper wrapper -->
+
+    <section class="ba-compos-wrapper">
+        <div class="row ba-compos-one">
+            <?php  $compos_count = count(get_field('composition_items')); ?>
+            <?php if( have_rows('composition_items') ): ?>
+                <?php while( have_rows('composition_items') ): the_row();?>
+                    <?php ++$compos_index; ?>
+                    <?php if($compos_index == 1 || $compos_index == 2) : ?>
+                        <div class="column large-3 ba-compos-item ba-compos-one-item">
+                            <div class="ba-compos-item-wrapper">
+                                <div class="ba-compos-item-front">
+                                    <div class="ba-compos-item-number"><?php echo '0'.$compos_index; ?></div>
+                                    <!-- /.ba-compos-item-number -->
+                                    <div class="ba-compos-item-image">
+                                        <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                    </div>
+                                    <!-- /.ba-compos-item-image -->
+                                    <div class="ba-compos-item-title"><?php the_sub_field('title'); ?></div>
+                                    <!-- /.ba-compos-item-title -->
+                                    <?php $show_secret_ingridient = get_sub_field('secret_ingridient'); ?>
+                                    <?php if($show_secret_ingridient) : ?>
+                                        <div class="ba-compos-item-maintitle">
+                                            Часть рецепты до сих пор находиться в секрете
+                                        </div>
+                                        <!-- /.ba-compos-item-maintitle -->
+                                    <?php endif; ?>
+                                </div>
+                                <!-- /.ba-compos-item-front -->
+                                <div class="ba-compos-item-back">
+                                    <div class="ba-compos-item-backimg">
+                                        <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                    </div>
+                                    <!-- /.ba-compos-item-backimg -->
+                                    <div class="ba-compos-item-backtitle">
+                                        <?php the_sub_field('back_title'); ?>
+                                    </div>
+                                    <!-- /.ba-compos-item-backtitle -->
+                                </div>
+                                <!-- /.ba-compos-item-back -->
+                            </div>
+                            <!-- /.ba-compos-item-wrapper -->
+                        </div>
+                        <!-- /.column large-3 ba-compos-item ba-compos-one-item -->
+                    <?php endif; ?>
+                    <?php if($compos_index == 2) : ?>
+                        <?php break; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+
+            <div class="column small-12 large-5 large-offset-1 ba-compos-title-wrapper">
+                <h2 class="ba-compos-title"><?php the_field('composition_title'); ?></h2>
+                <!-- /.ba-compos-title -->
+                <div class="ba-compos-title-list ba-compos-list">
+                    <?php the_field('composition_text'); ?>
+                </div>
+                <!-- /.ba-compos-title-list ba-compos-list -->
+            </div>
+            <!-- /.column small-12 large-5 large-offset-1 ba-compos-title-wrapper -->
+        </div>
+        <!-- /.row ba-compos-one -->
+
+        <div class="row ba-compos-two">
+            <?php if( have_rows('composition_items') ): ?>
+                <?php while( have_rows('composition_items') ): the_row();?>
+                    <?php ++$compos_index; ?>
+                    <div class="column small-12 medium-6 large-3 ba-compos-item ba-compos-two-item">
+                        <div class="ba-compos-item-wrapper">
+                            <div class="ba-compos-item-front">
+                                <div class="ba-compos-item-number">
+                                    <?php if($compos_index < 10) : ?>
+                                        <?php echo '0'.$compos_index; ?>
+                                    <?php else: ?>
+                                        <?php echo $compos_index; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <!-- /.ba-compos-item-number -->
+                                <div class="ba-compos-item-image">
+                                    <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                </div>
+                                <!-- /.ba-compos-item-image -->
+                                <div class="ba-compos-item-title"><?php the_sub_field('title'); ?></div>
+                                <!-- /.ba-compos-item-title -->
+                                <?php $show_secret_ingridient = get_sub_field('secret_ingridient'); ?>
+                                <?php if($show_secret_ingridient) : ?>
+                                    <div class="ba-compos-item-maintitle">
+                                        Часть рецепты до сих пор находиться в секрете
+                                    </div>
+                                    <!-- /.ba-compos-item-maintitle -->
+                                <?php endif; ?>
+                            </div>
+                            <!-- /.ba-compos-item-front -->
+                            <div class="ba-compos-item-back">
+                                <div class="ba-compos-item-backimg">
+                                    <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                </div>
+                                <div class="ba-compos-item-backtitle">
+                                    <?php the_sub_field('back_title'); ?>
+                                </div>
+                                <!-- /.ba-compos-item-backtitle -->
+                            </div>
+                            <!-- /.ba-compos-item-back -->
+                        </div>
+                        <!-- /.ba-compos-item-wrapper -->
+                    </div>
+                    <!-- /.column small-12 medium-6 large-3 ba-compos-item ba-compos-two-item -->
+                    <?php if($compos_index == $compos_count - 1) : ?>
+                        <?php break; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+        <!-- /.row ba-compos-two -->
+
+        <div class="row ba-compos-three">
+            <div class="column small-12 large-9 ba-compos-order-wrapper">
+                <div class="ba-compos-order">
+                    <div class="ba-compos-order-text ba-compos-list">
+                        <ul>
+                            <li><?php the_field('componation_order_text'); ?></li>
+                        </ul>
+                    </div>
+                    <!-- /.ba-compos-order-text ba-compos-list -->
+                    <a class="ba-compos-order-button ba-button">
+                        <span class="ba-button-text">заказать сбор трав</span>
+                    </a>
+                    <!-- /.ba-compos-order-button -->
+                </div>
+                <!-- /.ba-compos-order -->
+            </div>
+            <!-- /.column small-12 large-9 ba-compos-order-wrapper -->
+
+            <?php if( have_rows('composition_items') ): ?>
+                <?php while( have_rows('composition_items') ): the_row();?>
+                    <?php ++$compos_index; ?>
+                    <?php if($compos_index == $compos_count) : ?>
+                        <div class="column large-3 ba-compos-item ba-compos-item-three">
+                            <div class="ba-compos-item-wrapper">
+                                <div class="ba-compos-item-front">
+                                    <div class="ba-compos-item-number">
+                                        <?php if($compos_index < 10) : ?>
+                                            <?php echo '0'.$compos_index; ?>
+                                        <?php else: ?>
+                                            <?php echo $compos_index; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <!-- /.ba-compos-item-number -->
+                                    <div class="ba-compos-item-image">
+                                        <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                    </div>
+                                    <!-- /.ba-compos-item-image -->
+                                    <div class="ba-compos-item-title"><?php the_sub_field('title'); ?></div>
+                                    <!-- /.ba-compos-item-title -->
+                                    <?php $show_secret_ingridient = get_sub_field('secret_ingridient'); ?>
+                                    <?php if($show_secret_ingridient) : ?>
+                                        <div class="ba-compos-item-maintitle">
+                                            Часть рецепты до сих пор находиться в секрете
+                                        </div>
+                                        <!-- /.ba-compos-item-maintitle -->
+                                    <?php endif; ?>
+                                </div>
+                                <!-- /.ba-compos-item-front -->
+                                <div class="ba-compos-item-back">
+                                    <div class="ba-compos-item-backimg">
+                                        <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                    </div>
+                                    <div class="ba-compos-item-backtitle">
+                                        <?php the_sub_field('back_title'); ?>
+                                    </div>
+                                    <!-- /.ba-compos-item-backtitle -->
+                                </div>
+                                <!-- /.ba-compos-item-back -->
+                            </div>
+                            <!-- /.ba-compos-item-wrapper -->
+                        </div>
+                        <!-- /.column large-3 ba-compos-item ba-compos-item-three -->
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+        <!-- /.row ba-compos-three -->
+
+        <div class="row ba-compon-items-mobile">
+            <?php if( have_rows('composition_items') ): ?>
+                <?php while( have_rows('composition_items') ): the_row();?>
+                    <?php ++$compos_index_mobile; ?>
+
+                    <div class="column small-12 medium-6 large-3 ba-compos-item ba-compos-two-item">
+                        <div class="ba-compos-item-wrapper">
+                            <div class="ba-compos-item-front">
+                                <div class="ba-compos-item-number">
+                                    <?php if($compos_index < 10) : ?>
+                                        <?php echo '0'.$compos_index; ?>
+                                    <?php else: ?>
+                                        <?php echo $compos_index; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <!-- /.ba-compos-item-number -->
+                                <div class="ba-compos-item-image">
+                                    <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                </div>
+                                <!-- /.ba-compos-item-image -->
+                                <div class="ba-compos-item-title"><?php the_sub_field('title'); ?></div>
+                                <!-- /.ba-compos-item-title -->
+                                <?php $show_secret_ingridient = get_sub_field('secret_ingridient'); ?>
+                                <?php if($show_secret_ingridient) : ?>
+                                    <div class="ba-compos-item-maintitle">
+                                        Часть рецепты до сих пор находиться в секрете
+                                    </div>
+                                    <!-- /.ba-compos-item-maintitle -->
+                                <?php endif; ?>
+                            </div>
+                            <!-- /.ba-compos-item-front -->
+                            <div class="ba-compos-item-back">
+                                <div class="ba-compos-item-backimg">
+                                    <img src="<?php the_sub_field('image'); ?>" alt="Component">
+                                </div>
+                                <div class="ba-compos-item-backtitle">
+                                    <?php the_sub_field('back_title'); ?>
+                                </div>
+                                <!-- /.ba-compos-item-backtitle -->
+                            </div>
+                            <!-- /.ba-compos-item-back -->
+                        </div>
+                        <!-- /.ba-compos-item-wrapper -->
+                    </div>
+                    <!-- /.column small-12 medium-6 large-3 ba-compos-item ba-compos-two-item -->
+                <?php endwhile; ?>
+            <?php endif; ?>
+
+            <div class="column small-12 medium-6 large-3 ba-compos-item ba-compos-tablet-order__vis">
+                <div class="ba-compos-item-wrapper ba-compos-tablet-order">
+                    <p class="ba-compos-tabler-order__text">
+                        <?php the_field('componation_order_text'); ?>
+                    </p>
+                    <!-- /.ba-compos-tabler-order__text -->
+                    <a class="ba-compos-order-tablet-button ba-button">
+                        <span class="ba-button-text">заказать сбор трав</span>
+                    </a>
+                    <!-- /.ba-compos-order-button -->
+                </div>
+                <!-- /.ba-compos-item-wrapper ba-compos-tablet-order -->
+            </div>
+            <!-- /.column small-12 medium-6 large-3 ba-compos-item ba-compos-tablet-order__vis -->
+        </div>
+        <!-- /.row ba-compon-items-mobile -->
+
+    </section>
+    <!-- /.ba-compos-wrapper -->
 </main>
 
 <?php get_footer(); ?>
