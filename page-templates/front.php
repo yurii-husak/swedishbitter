@@ -350,6 +350,8 @@ $testimonial_titles_count = 0; ?>
                                 </div>
                                 <!-- /.ba-compos-item-front -->
                                 <div class="ba-compos-item-back">
+                                    <div class="ba-compos-item-number-back"><?php echo '0' . $compos_index; ?></div>
+                                    <!-- /.ba-compos-item-number-back -->
                                     <div class="ba-compos-item-backimg">
                                         <img src="<?php the_sub_field('image'); ?>" alt="Component">
                                     </div>
@@ -358,6 +360,8 @@ $testimonial_titles_count = 0; ?>
                                         <?php the_sub_field('back_title'); ?>
                                     </div>
                                     <!-- /.ba-compos-item-backtitle -->
+                                    <div class="ba-compos-item-title-back"><?php the_sub_field('title'); ?></div>
+                                    <!-- /.ba-compos-item-title-back -->
                                 </div>
                                 <!-- /.ba-compos-item-back -->
                             </div>
@@ -414,9 +418,19 @@ $testimonial_titles_count = 0; ?>
                             </div>
                             <!-- /.ba-compos-item-front -->
                             <div class="ba-compos-item-back">
+                                <div class="ba-compos-item-number-back">
+                                    <?php if ($compos_index < 10) : ?>
+                                        <?php echo '0' . $compos_index; ?>
+                                    <?php else: ?>
+                                        <?php echo $compos_index; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <!-- /.ba-compos-item-number-back -->
                                 <div class="ba-compos-item-backimg">
                                     <img src="<?php the_sub_field('image'); ?>" alt="Component">
                                 </div>
+                                <div class="ba-compos-item-title-back"><?php the_sub_field('title'); ?></div>
+                                <!-- /.ba-compos-item-title-back -->
                                 <div class="ba-compos-item-backtitle">
                                     <?php the_sub_field('back_title'); ?>
                                 </div>
@@ -484,9 +498,19 @@ $testimonial_titles_count = 0; ?>
                                 </div>
                                 <!-- /.ba-compos-item-front -->
                                 <div class="ba-compos-item-back">
+                                    <div class="ba-compos-item-number-back">
+                                        <?php if ($compos_index < 10) : ?>
+                                            <?php echo '0' . $compos_index; ?>
+                                        <?php else: ?>
+                                            <?php echo $compos_index; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <!-- /.ba-compos-item-number-back -->
                                     <div class="ba-compos-item-backimg">
                                         <img src="<?php the_sub_field('image'); ?>" alt="Component">
                                     </div>
+                                    <div class="ba-compos-item-title-back"><?php the_sub_field('title'); ?></div>
+                                    <!-- /.ba-compos-item-title-back -->
                                     <div class="ba-compos-item-backtitle">
                                         <?php the_sub_field('back_title'); ?>
                                     </div>
