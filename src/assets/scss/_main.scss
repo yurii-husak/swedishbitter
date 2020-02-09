@@ -30,13 +30,15 @@ p{
 	color: #fff;
 	font-size: 12px;
 	line-height: 22px;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	outline: none;
 	transition: all 0.5s;
 	font-weight: 700;
 	@include breakpoint(medium) {
 		font-size: 14px;
+		padding-top: 25px;
+		padding-bottom: 25px;
 	}
 	.ba-button-text{
 		position: relative;

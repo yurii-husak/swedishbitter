@@ -23,3 +23,30 @@ $('.ba-symptoms-tabs .tab-inner').on('click', function (event) {
     $('#tab-circle-' + tab_id).addClass('active-tab-circle').fadeIn();
     return false;
 })
+
+// Tabs
+
+$('.tabs-title').filter(':first').addClass('is-active');
+$('.tabs-title .ba-testimonial-cat-button').filter(':first').attr('aria-selected', true);
+
+$('.ba-testimonial-cat-button').click(function(){
+    $.getScript( "/wp-content/themes/swedishbitter/loadmore.js", function( data, textStatus, jqxhr ) {
+
+    });
+});
+
+let testimonial_cat;
+
+$(function(){
+    $('.ba-testimonial-cat-button').click(function(){
+        testimonial_cat = $(this).data('testimonials-cat');
+
+        let data = {
+            action: 'simple_testimonial_view',
+            testimonialCat: testimonial_cat
+        };
+        $.post(ba_ajax, data, function(response){
+            $('.ba-testimonials-content__wrapper').html(response);
+        });
+    });
+});
