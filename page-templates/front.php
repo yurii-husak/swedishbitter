@@ -678,21 +678,44 @@ $testimonial_titles_count = 0; ?>
                 <!-- /.column small-12 large-6 ba-testimonial-loadmore -->
                 <div class="column small-12 large-6 ba-testimonial-join-button">
                     <a href="#" class="ba-button ba-button-join">
-                    <span class="ba-button-text">
-                        Присоединиться к тем, кто решил свои проблемы
-                    </span>
+                        <span class="ba-button-text">
+                            Присоединиться к тем, кто решил свои проблемы
+                        </span>
                     </a>
                 </div>
                 <!-- /.column small-12 large-6 ba-testimonial-join-button -->
             </div>
             <!-- /.row ba-testimonials-buttons -->
-
         </div>
         <!-- /.ba-testimonials-content__wrapper wrapper -->
-
-
     </section>
     <!-- /.ba-testimonials -->
+
+    <section class="ba-participate-wrapper wrapper">
+        <img src="<?php the_field('participate_background'); ?>" alt="Participate image">
+        <div class="row">
+            <div class="column small-12 large-7 large-offset-5 ba-participate-item__wrapper">
+                <div class="ba-participate-item__content">
+                    <h2 class="ba-participate-item__title"><?php the_field('participate_title'); ?></h2>
+                    <!-- /.ba-participate-item__title -->
+                    <div class="ba-participate-item__text"><?php the_field('participate_content'); ?></div>
+                    <!-- /.ba-participate-item__text -->
+                    <div class="ba-participate-item__subtext"><?php the_field('participate_subtext'); ?></div>
+                    <!-- /.ba-participate-item__subtext -->
+                    <a href="#" class="ba-button ba-participate-button">
+                        <span class="ba-button-text">
+                            создать эликсир молодости и здоровья
+                        </span>
+                    </a>
+                    <!-- /.ba-participate-button -->
+                </div>
+                <!-- /.ba-participate-item__content -->
+            </div>
+            <!-- /.column small-12 large-7 large-offset-5 ba-participate-item__wrapper -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.ba-participate-wrapper wrapper -->
 </main>
 
 <?php get_footer(); ?>

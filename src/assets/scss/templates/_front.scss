@@ -1277,7 +1277,7 @@
           position: absolute;
           left: 15px;
           bottom: 15px;
-          transform: rotate(180deg);
+          transform: rotate(180deg) scale(-1, 1);
           writing-mode: vertical-lr;
           font-size: 14px;
           line-height: 24px;
@@ -1344,10 +1344,10 @@
 
 .ba-testimonials{
   padding-top: 15px;
-  margin-bottom: 170px;
+  margin-bottom: 123px;
   @include breakpoint(medium) {
     padding-top: 130px;
-    margin-bottom: 370px;
+    margin-bottom: 190px;
   }
   @include breakpoint(large) {
     padding-top: 180px;
@@ -1548,6 +1548,109 @@
         @include breakpoint(medium) {
           padding: 25px 15px;
         }
+      }
+    }
+  }
+}
+
+.ba-participate-wrapper{
+  position: relative;
+  @include breakpoint(large) {
+    padding: 60px 0;
+  }
+
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    max-width: 62%;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+  }
+
+  .ba-participate-item__wrapper{
+    background: #fff;
+    padding: 0;
+    @include breakpoint(medium) {
+      padding: 60px;
+    }
+    @include breakpoint(large) {
+      padding: 20px;
+    }
+
+    .ba-participate-item__content{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      @include breakpoint(medium) {
+        border: 1px solid #c8dcba;
+        padding: 60px 59px;
+      }
+      @include breakpoint(large) {
+        padding: 60px 60px;
+      }
+
+      .ba-participate-item__title{
+        font-weight: 700;
+        color: #303030;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0 25px;
+        margin-top: 55px;
+        @include breakpoint(medium) {
+          font-size: 40px;
+          line-height: 50px;
+          text-align: left;
+          margin-bottom: 45px;
+          padding: 0;
+          margin-top: 0;
+        }
+      }
+
+      .ba-participate-item__text{
+        font-size: 14px;
+        line-height: 14px;
+        color: #303030;
+        margin-bottom: 20px;
+        text-align: justify;
+        padding: 0 10px;
+        @include breakpoint(medium) {
+          font-size: 16px;
+          line-height: 16px;
+          margin-bottom: 30px;
+          padding: 0;
+        }
+      }
+
+      .ba-participate-item__subtext{
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        margin-bottom: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 25px;
+        @include breakpoint(medium) {
+          margin-bottom: 60px;
+          text-align: left;
+          padding: 0;
+        }
+      }
+
+      .ba-participate-button{
+        display: block;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
       }
     }
   }
