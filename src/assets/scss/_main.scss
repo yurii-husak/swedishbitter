@@ -10,11 +10,7 @@ a,
 button{
 	@include ba-transition;
 }
-a{
-	&:focus{
-		color: #fff;
-	}
-}
+
 p{
 	margin: 0;
 	padding: 0;

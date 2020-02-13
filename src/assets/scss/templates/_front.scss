@@ -1,3 +1,11 @@
+main{
+  a{
+    &:focus{
+      color: #fff;
+    }
+  }
+}
+
 .ba-symptoms-wrapper{
   @include breakpoint(medium) {
     margin-top: 75px;
@@ -1651,6 +1659,178 @@
         padding-left: 20px;
         padding-right: 20px;
         text-align: center;
+      }
+    }
+  }
+}
+
+.ba-quality-wrapper{
+  padding-top: 55px;
+  background: #f6f9f3;
+  @include breakpoint(medium) {
+    padding-top: 80px;
+    background: transparent;
+  }
+  @include breakpoint(large) {
+    padding-top: 285px;
+  }
+
+  .ba-quality-title{
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    @include breakpoint(medium) {
+      font-size: 30px;
+      line-height: 40px;
+      padding-bottom: 35px;
+    }
+    @include breakpoint(large) {
+      font-size: 40px;
+      line-height: 50px;
+      color: #303030;
+      text-align: left;
+    }
+  }
+  
+  .ba-quality-content{
+    background: #f6f9f3;
+    @include breakpoint(medium) {
+      padding-bottom: 75px;
+    }
+    @include breakpoint(large) {
+      padding-bottom: 100px;
+    }
+
+    .ba-quality-content__wrapper{
+      flex-direction: column-reverse;
+      @include breakpoint(medium) {
+        flex-direction: row-reverse;
+      }
+      @include breakpoint(large) {
+        flex-direction: row;
+      }
+    }
+
+    .ba-quality-item__info{
+      padding-top: 60px;
+      @include breakpoint(medium) {
+        padding: 0 20px;
+      }
+      @include breakpoint(large) {
+        padding: 0;
+      }
+    }
+
+    .ba-quality-item__subtitle-mobile{
+      display: block;
+      margin: 20px auto;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 700;
+      color: #303030;
+      text-transform: uppercase;
+      max-width: 515px;
+      text-align: center;
+      padding: 0 10px;
+      @include breakpoint(medium) {
+        margin: 40px auto;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      @include breakpoint(large) {
+        display: none;
+      }
+    }
+
+    .ba-quality-item__subtitle{
+      margin: 40px 0;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 700;
+      color: #303030;
+      text-transform: uppercase;
+      max-width: 515px;
+      display: none;
+      @include breakpoint(large) {
+        display: block;
+      }
+    }
+    
+    .ba-quality-item__wrapper{
+      background: transparent;
+      @include breakpoint(medium) {
+        background: #fff;
+        padding: 20px;
+      }
+
+      .ba-quality-item__content{
+        position: relative;
+        padding-bottom: 85px;
+        @include breakpoint(medium) {
+          border: 1px solid #c8dcba;
+          padding: 50px 50px 110px;
+        }
+
+        .ba-quality-item__but{
+          font-size: 14px;
+          line-height: 24px;
+          color: #a4c58c;
+          font-weight: 700;
+          text-transform: uppercase;
+          position: absolute;
+          top: -35px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: transparent;
+          padding: 0 10px;
+          @include breakpoint(medium) {
+            background: #fff;
+            top: 0;
+            left: 40px;
+            transform: translateY(-55%);
+          }
+        }
+
+        .ba-quality-item__text{
+          font-size: 14px;
+          line-height: 24px;
+          color: #303030;
+          padding: 0 20px;
+          @include breakpoint(medium) {
+            padding: 0;
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+
+        .ba-quality-button{
+          position: absolute;
+          bottom: -1px;
+          right: 0;
+          padding-left: 20px;
+          padding-right: 20px;
+          width: 100%;
+          text-align: center;
+          @include breakpoint(large) {
+            padding-left: 60px;
+            padding-right: 60px;
+            width: auto;
+            bottom: -1px;
+            right: -1px;
+          }
+        }
+      }
+    }
+    
+    .ba-quality-item__sertificate{
+      text-align: center;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      @include breakpoint(large) {
+        margin-top: -180px;
       }
     }
   }

@@ -716,6 +716,54 @@ $testimonial_titles_count = 0; ?>
         <!-- /.row -->
     </section>
     <!-- /.ba-participate-wrapper wrapper -->
+
+    <section class="ba-quality-wrapper wrapper">
+        <div class="row">
+            <h2 class="column small-12 large-7 ba-quality-title"><?php the_field('quality_title'); ?></h2>
+            <!-- /.column small-12 large-7 ba-quality-title -->
+        </div>
+        <!-- /.row -->
+        <div class="ba-quality-content">
+            <div class="row">
+                <div class="column small-12 ba-quality-item__subtitle-mobile">
+                    <p><?php the_field('quality_subtitle'); ?></p>
+                </div>
+                <!-- /.column small-12 ba-quality-item__subtitle-mobile-->
+            </div>
+            <!-- /.row -->
+            <div class="row ba-quality-content__wrapper">
+                <div class="column-small-12 medium-7 large-6 large-offset-1 ba-quality-item__info">
+                    <p class="ba-quality-item__subtitle"><?php the_field('quality_subtitle'); ?></p>
+                    <!-- /.ba-quality-item__subtitle -->
+                    <div class="ba-quality-item__wrapper">
+                        <div class="ba-quality-item__content">
+                            <div class="ba-quality-item__but">НО:</div>
+                            <!-- /.ba-quality-item__but -->
+                            <div class="ba-quality-item__text"><?php the_field('quality_content'); ?></div>
+                            <!-- /.ba-quality-item__text -->
+                            <a href="#" class="ba-button ba-quality-button">
+                                <span class="ba-button-text">
+                                    заказать сбор трав
+                                </span>
+                            </a>
+                            <!-- /.ba-quality-button -->
+                        </div>
+                        <!-- /.ba-quality-item__content -->
+                    </div>
+                    <!-- /.ba-quality-item__wrapper -->
+                </div>
+                <!-- /.column-small-12 medium-7 large-6 large-offset-1 ba-quality-item__info -->
+
+                <div class="column-small-12 medium-5 large-5 ba-quality-item__sertificate">
+                    <img src="<?php the_field('quality_sertificate'); ?>" alt="Sertificate">
+                </div>
+                <!-- /.column-small-12 medium-5 large-5 ba-quality-item__sertificate -->
+            </div>
+            <!-- /.row ba-quality-content__wrapper -->
+        </div>
+        <!-- /.ba-quality-content -->
+    </section>
+    <!-- /.ba-quality-wrapper wrapper -->
 </main>
 
 <?php get_footer(); ?>
