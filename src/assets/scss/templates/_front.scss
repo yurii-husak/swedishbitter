@@ -1,11 +1,3 @@
-main{
-  a{
-    &:focus{
-      color: #fff;
-    }
-  }
-}
-
 .ba-symptoms-wrapper{
   @include breakpoint(medium) {
     margin-top: 75px;
@@ -528,7 +520,6 @@ main{
 }
 
 .ba-history-wrapper{
-  overflow: hidden;
   position: relative;
   margin-bottom: 10px;
   @include breakpoint(large) {
@@ -624,6 +615,7 @@ main{
       max-width: 100%;
       width: 100%;
       margin-top: 30px;
+      position: relative;
       @include breakpoint(medium) {
         margin-top: 55px;
         margin-left: 45px;
@@ -656,7 +648,8 @@ main{
         padding: 10px 0;
         max-width: 300px;
         width: 100%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
         @include breakpoint(medium) {
           max-width: 100%;
@@ -670,10 +663,34 @@ main{
 
       .ba-history-form__button{
         width: 100%;
-        margin-top: 35px;
+        margin-top: 25px;
         padding-left: 20px;
         padding-right: 20px;
         cursor: pointer;
+      }
+
+      span.wpcf7-not-valid-tip{
+        left: 50%;
+        transform: translateX(-50%);
+        @include breakpoint(medium) {
+          left: 0;
+          transform: translateX(0);
+        }
+      }
+
+      .wpcf7-response-output{
+        position: absolute;
+        top: 101%;
+        left: 0;
+        font-size: 12px;
+        line-height: 16px;
+        border: none;
+        margin: 0;
+        @include breakpoint(medium) {
+          top: 103%;
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
     }
   }

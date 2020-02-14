@@ -259,11 +259,22 @@
 				.ba-header-form__button{
 					cursor: pointer;
 					padding-left: 75px;
-					padding-right: 110px;
+					padding-right: 65px;
 					position: absolute;
 					bottom: 0;
 					right: 0;
 				}
+			}
+
+			.wpcf7-response-output{
+				position: absolute;
+				bottom: 5px;
+				left: 0;
+				max-width: 45%;
+				font-size: 14px;
+				line-height: 20px;
+				border: none;
+				margin: 0;
 			}
 		}
 	}

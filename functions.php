@@ -56,6 +56,9 @@ require_once('library/post-types.php');
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
 
+define( 'WPCF7_AUTOP', false );
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 add_action('wp_ajax_simple_testimonial_view', 'simple_testimonial_view');
 add_action('wp_ajax_nopriv_simple_testimonial_view', 'simple_testimonial_view');
 

@@ -53,6 +53,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// CDN hosted jQuery migrate for compatibility with jQuery 3.x
 		wp_register_script( 'jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array('jquery'), '3.0.1', false );
 
+		//FancyBox
+        wp_enqueue_style( 'fancybox-style', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
+        wp_enqueue_script( 'fancybox-script', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery'), '', 'true' );
+
         //Testimonials loadmore
         wp_enqueue_script( 'tstm-loadmore', get_stylesheet_directory_uri() . '/loadmore.js', array('jquery') );
 

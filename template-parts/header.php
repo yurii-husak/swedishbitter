@@ -59,19 +59,7 @@
                     <div class="ba-header-form__content">
                         <p class="ba-header-form__title">Узнайте подробнее о бальзаме</p>
                         <!-- /.ba-header-form__title -->
-                        <form>
-                            <div class="ba-header-form_inputs">
-                                <input type="text" name="name" placeholder="Имя">
-                                <input type="phone" name="phone" placeholder="Телефон">
-                            </div>
-                            <!-- /.ba-header-form_inputs -->
-                            <button class="ba-header-form__button ba-button">
-                                <span class="ba-button-text">
-                                    Узнать
-                                </span>
-                                <!-- /.ba-button-text -->
-                            </button>
-                        </form>
+                        <?php the_field('header_form'); ?>
                     </div>
                     <!-- /.ba-header-form__content -->
                 </div>

@@ -10,7 +10,28 @@ a,
 button{
 	@include ba-transition;
 }
-
+main{
+	a{
+		&:focus{
+			color: #fff;
+		}
+	}
+}
+.wpcf7-form-control-wrap{
+	display: flex;
+}
+span.wpcf7-not-valid-tip{
+	position: absolute;
+	left: 0;
+	bottom: -7px;
+	font-size: 12px;
+}
+.wpcf7-validation-errors{
+	color: #f00;
+}
+.wpcf7-mail-sent-ok{
+	color: #398f14;
+}
 p{
 	margin: 0;
 	padding: 0;

@@ -150,7 +150,7 @@ $testimonial_titles_count = 0; ?>
                             <div class="ba-symptoms-testimonials-content">
                                 <p class="ba-symptoms-testimonials-text">Более 2 000 покупателей доказали эффективность
                                     «Шведской горечи» в каждом из этих случаев</p>
-                                <a class="ba-symptoms-testimonials-link" href="#">Читать отзывы</a>
+                                <a class="ba-symptoms-testimonials-link" href="#ba-testimonials">Читать отзывы</a>
                             </div>
                             <!-- /.ba-symptoms-testimonials-content -->
                         </div>
@@ -158,7 +158,7 @@ $testimonial_titles_count = 0; ?>
                     </div>
                     <!-- /.ba-symptoms-right-image -->
 
-                    <a class="ba-symptoms-button ba-button" href="#">
+                    <a class="ba-symptoms-button ba-button btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;" >
                         <span class="ba-button-text">Избавиться от проблем</span>
                         <!-- /.ba-button-text -->
                     </a>
@@ -174,14 +174,13 @@ $testimonial_titles_count = 0; ?>
     <!-- /.ba-symptoms-wrapper -->
 
     <section class="ba-popularity-wrapper wrapper">
-
         <div class="row ba-popularity-content">
             <div class="column small-12 large-6 ba-popularuty-left">
                 <img src="<?php the_field('popularity_image'); ?>" alt="Popularity">
                 <div class="ba-popularity-left__content">
                     <p class="ba-popularity-left__text"><?php the_field('get_text'); ?></p>
                     <!-- /.ba-popularity-left__text -->
-                    <a class="ba-popularity-left__button ba-button">
+                    <a class="ba-popularity-left__button ba-button btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;">
                         <span class="ba-button-text">Получить средство-панацею к себе в аптечку</span>
                     </a>
                     <!-- /.ba-popularity-left__button -->
@@ -220,15 +219,7 @@ $testimonial_titles_count = 0; ?>
                             <h4 class="ba-history-form__title">Оставьте свою почту и получайте рецепты молодости и
                                 здоровья каждую неделю</h4>
                             <!-- /.ba-history-form-title -->
-                            <form>
-                                <input type="email" placeholder="E-mail" name="email">
-                                <button class="ba-history-form__button ba-button">
-                                    <span class="ba-button-text">
-                                        Оставить почту
-                                    </span>
-                                    <!-- /.ba-button-text -->
-                                </button>
-                            </form>
+                            <?php the_field('history_form'); ?>
                         </div>
                         <!-- /.ba-history-form -->
                     </div>
@@ -458,7 +449,7 @@ $testimonial_titles_count = 0; ?>
                         </ul>
                     </div>
                     <!-- /.ba-compos-order-text ba-compos-list -->
-                    <a class="ba-compos-order-button ba-button">
+                    <a class="ba-compos-order-button ba-button btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;">
                         <span class="ba-button-text">заказать сбор трав</span>
                     </a>
                     <!-- /.ba-compos-order-button -->
@@ -581,7 +572,7 @@ $testimonial_titles_count = 0; ?>
                         <?php the_field('componation_order_text'); ?>
                     </p>
                     <!-- /.ba-compos-tabler-order__text -->
-                    <a class="ba-compos-order-tablet-button ba-button">
+                    <a class="ba-compos-order-tablet-button ba-button btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;">
                         <span class="ba-button-text">заказать сбор трав</span>
                     </a>
                     <!-- /.ba-compos-order-button -->
@@ -596,7 +587,7 @@ $testimonial_titles_count = 0; ?>
     <!-- /.ba-compos-wrapper -->
 
     <section class="ba-testimonials">
-        <div class="row">
+        <div class="row" id="ba-testimonials">
             <div class="column small-12 large-5">
                 <h2 class="ba-testimonials-title">Отзывы о «Шведской горечи»</h2>
                 <!-- /.ba-testimonials-title -->
@@ -677,7 +668,7 @@ $testimonial_titles_count = 0; ?>
                 </div>
                 <!-- /.column small-12 large-6 ba-testimonial-loadmore -->
                 <div class="column small-12 large-6 ba-testimonial-join-button">
-                    <a href="#" class="ba-button ba-button-join">
+                    <a class="ba-button ba-button-join btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;">
                         <span class="ba-button-text">
                             Присоединиться к тем, кто решил свои проблемы
                         </span>
@@ -702,7 +693,7 @@ $testimonial_titles_count = 0; ?>
                     <!-- /.ba-participate-item__text -->
                     <div class="ba-participate-item__subtext"><?php the_field('participate_subtext'); ?></div>
                     <!-- /.ba-participate-item__subtext -->
-                    <a href="#" class="ba-button ba-participate-button">
+                    <a class="ba-button ba-participate-button btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;">
                         <span class="ba-button-text">
                             создать эликсир молодости и здоровья
                         </span>
@@ -741,7 +732,7 @@ $testimonial_titles_count = 0; ?>
                             <!-- /.ba-quality-item__but -->
                             <div class="ba-quality-item__text"><?php the_field('quality_content'); ?></div>
                             <!-- /.ba-quality-item__text -->
-                            <a href="#" class="ba-button ba-quality-button">
+                            <a class="ba-button ba-quality-button btn btn-primary" data-fancybox data-animation-duration="700" data-src="#animatedModal" href="javascript:;">
                                 <span class="ba-button-text">
                                     заказать сбор трав
                                 </span>
@@ -764,6 +755,13 @@ $testimonial_titles_count = 0; ?>
         <!-- /.ba-quality-content -->
     </section>
     <!-- /.ba-quality-wrapper wrapper -->
+    
+    <div class="ba-popup-wrapper animated-modal" style="display: none;" id="animatedModal">
+        <h2 class="ba-popup-title">Заполните форму</h2>
+        <!-- /.ba-popup-title -->
+        <?php echo do_shortcode('[contact-form-7 id="210" title="Contact form - Popup"]') ?>
+    </div>
+    <!-- /.ba-popup-wrapper -->
 </main>
 
 <?php get_footer(); ?>
