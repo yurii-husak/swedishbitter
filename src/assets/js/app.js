@@ -12,6 +12,7 @@ import './lib/foundation-explicit-pieces';
 
 $(document).foundation();
 
+//
 $('.tab-inner').filter(':first').addClass('active-tab');
 $('.ba-tab-circle').filter(':first').addClass('active-tab-circle');
 
@@ -61,3 +62,12 @@ $(".ba-symptoms-testimonials").on("click","a", function (event) {
 $('[data-fancybox]').fancybox({
     touch: false
 });
+
+//Loader
+window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+    }, 1000);
+}

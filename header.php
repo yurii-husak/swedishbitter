@@ -18,6 +18,11 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+    <div class="loader_wrapper">
+        <div class="loader">Loading...</div>
+    </div>
+    <!-- /.loader_wrapper -->
+
 
 	<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 
